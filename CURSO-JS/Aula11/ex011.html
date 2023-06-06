@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Em que país está vivendo?</h1>
+    Escreva em qual país está vivendo: <input type="text" name="pais" id="pais">
+    <br>
+    Escreva em qual país nasceu: <input type="text" name="nasceu" id="nasceu">
+    <br>
+    <input type="button" value="verificar" onclick="analisar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function analisar(){
+            var pais = window.document.querySelector('input#pais')
+            var nasceu = window.document.querySelector('input#nasceu')
+            var pais1 = text(pais.value)
+            var nasceu1 = text(nasceu.value)
+            var res = window.document.querySelector('div#res')
+            if (pais1 == Brasil && nasceu1 == Brasil){
+                res.innerHTML += `<p>Você está vivendo no <strong>BRASIL</strong> e é <strong>BRASILEIRO</strong></p>`
+            }else if(pais1 == Brasil && nasceu1 != Brasil){
+                res.innerHTML += `<p>Você está vivendo no <strong>BRASIL</strong> mas é <strong>ESTRANGEIRO</strong></p>`
+            }else if(pais1 != Brasil && nasceu1 == Brasil){
+                res.innerHTML += `<p>Você está vivendo fora do <strong>BRASIL</strong> mas é <strong>BRASILEIRO</strong></p>`
+            }else{
+                res.innerHTML += `<p>Você está vivendo fora do <strong>BRASIL</strong> e é <strong>ESTRANGEIRO</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
